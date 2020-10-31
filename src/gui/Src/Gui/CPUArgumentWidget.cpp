@@ -152,16 +152,16 @@ void CPUArgumentWidget::contextMenuSlot(QPoint pos)
             return addr >= base && addr < base + size;
         };
 
-        configAction(wMenu, DIcon(ArchValue("processor32.png", "processor64.png")), mFollowDisasm, valueText, tr("Disassembler"));
-        configAction(wMenu, DIcon("dump.png"), mFollowDump, valueText, tr("Dump"));
+        configAction(wMenu, DIcon(ArchValue("processor32.png", "processor64.png")), mFollowDisasm, valueText, tr("D&isassembler"));
+        configAction(wMenu, DIcon("dump.png"), mFollowDump, valueText, tr("&Dump"));
         if(inStackRange(value))
-            configAction(wMenu, DIcon("stack.png"), mFollowStack, valueText, tr("Stack"));
+            configAction(wMenu, DIcon("stack.png"), mFollowStack, valueText, tr("&Stack"));
         if(DbgMemIsValidReadPtr(valueAddr))
         {
-            configAction(wMenu, DIcon(ArchValue("processor32.png", "processor64.png")), mFollowAddrDisasm, valueAddrText, tr("Disassembler"));
-            configAction(wMenu, DIcon("dump.png"), mFollowDump, valueAddrText, tr("Dump"));
+            configAction(wMenu, DIcon(ArchValue("processor32.png", "processor64.png")), mFollowAddrDisasm, valueAddrText, tr("D&isassembler"));
+            configAction(wMenu, DIcon("dump.png"), mFollowDump, valueAddrText, tr("&Dump"));
             if(inStackRange(valueAddr))
-                configAction(wMenu, DIcon("stack.png"), mFollowAddrStack, valueAddrText, tr("Stack"));
+                configAction(wMenu, DIcon("stack.png"), mFollowAddrStack, valueAddrText, tr("&Stack"));
         }
     }
     QMenu wCopyMenu(tr("&Copy"));
