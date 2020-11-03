@@ -284,7 +284,7 @@ int PatchFile(const PATCHINFO* List, int Count, const char* FileName, char* Erro
         unsigned char* ptr = (unsigned char*)ConvertVAtoFileOffsetEx(fileMapVa, loadedSize, moduleBase, List[i].addr, false, true);
 
         // Skip patches that do not have a raw address
-        if(!ptr)
+        if(ptr <= 0)
             continue;
 
         *ptr = List[i].newbyte;
